@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,103 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+body {
+  background-color: #fff;
+}
+
+:root {
+  --main-color1-dark: rgb(3, 37, 65);
+  --main-color1-light: rgb(1, 180, 228);
+  --main-color2-light: rgb(192, 254, 207);
+  --main-color2-medium: rgb(30, 213, 169);
+  --shadow-color: rgb(160, 160, 160);
+}
+
+.App {
+  display: flex;
+  flex-direction: row;
+}
+
+/* RESET */
+li {
+  list-style: none;
+}
+
+input,
+button {
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.Interface {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 1em;
+}
+
+.Interface > div {
+  margin: auto 1em;
+}
+
+.MoviesList li {
+  margin-bottom: 0.5em;
+}
+
+.MoviesList li p:hover {
+  cursor: pointer;
+}
+
+.MovieDetails img {
+  height: 300px;
+}
+
+.SearchBar {
+  background-color: var(--main-color1-dark);
+  padding: 2em;
+}
+
+#search-input {
+  background-color: white;
+  border-radius: 25px;
+  margin: 1em;
+  padding: 0.5em 0.8em;
+}
+
+#search-input:focus {
+  background-color: none;
+  outline: none;
+}
+
+.btn {
+  border-radius: 25px;
+  padding: 0.5em 0.8em;
+  color: white;
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 1em;
+  box-shadow: 2px 3px 2px 2px var(--shadow-color);
+  margin: 0.5em;
+}
+
+.btn:hover,
+.btn:active {
+  box-shadow: none;
+  transform: scale(0.98);
+  box-shadow: 2px 3px 0px 0px var(--shadow-color);
+}
+
+.btn.search {
+  background: linear-gradient(
+    to left,
+    var(--main-color1-light),
+    var(--main-color2-medium)
+  );
 }
