@@ -8,6 +8,10 @@ La clé API utilisée dans ce fichier a été générée par moi-même sur le si
 
 Ce projet a été créé grâce à [Create React App](https://github.com/facebook/create-react-app).
 
+### Branche "main"
+
+Projet initial, pour une candidature à Fleet. Dernier commit le 5 octobre. 
+
 ## Installations nécessaires avant d'exécuter le programme : 
 
 ### `npm i`
