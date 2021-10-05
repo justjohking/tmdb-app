@@ -1,4 +1,6 @@
-Installations nécessaires avant d'exécuter le programme : 
+Ce projet a été créé grâce à [Create React App](https://github.com/facebook/create-react-app)
+
+# Installations nécessaires avant d'exécuter le programme : 
 
 ### `npm i`
 Installer tous les modules nécessaires à l'exécution du programme en local. 
@@ -7,6 +9,7 @@ URL : http://localhost:3000
 Exécution du programme : 
 
 ### `npm start`
+
 
 
 
