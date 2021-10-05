@@ -17,19 +17,17 @@ export class SearchBar extends Component {
 
     render() {
         return (
-            <div className="SearchBar">
-                    <input 
-                        id="search-input"
-                        name="search"
-                        type='text'
-                        value={this.props.value}
-                        onChange={this.handleSearch}
-                    />
-                    <div>
-                        <button onClick={this.filterMovies} class="btn search">search</button>
-                        <button onClick={this.resetSearch} class="btn reset">reset</button>
-                    </div>
-            </div>
+            <nav className="SearchBar">
+                <input 
+                    id="search-input"
+                    name="search"
+                    type='text'
+                    value={this.props.value}
+                    onChange={this.handleSearch}
+                />
+                    <button onClick={this.filterMovies} className="btn search">search</button>
+                    <button onClick={this.resetSearch} className="btn reset">reset</button>
+            </nav>
         )
     }
 }

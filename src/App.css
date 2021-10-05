@@ -39,6 +39,8 @@
 
 body {
   background-color: #fff;
+  box-sizing: border-box;
+  padding: 0;
 }
 
 :root {
@@ -47,11 +49,6 @@ body {
   --main-color2-light: rgb(192, 254, 207);
   --main-color2-medium: rgb(30, 213, 169);
   --shadow-color: rgb(160, 160, 160);
-}
-
-.App {
-  display: flex;
-  flex-direction: row;
 }
 
 /* RESET */
@@ -71,22 +68,46 @@ button {
 
 .Interface {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  margin: 1em;
+  flex-direction: column;
 }
 
-.Interface > div {
-  margin: auto 1em;
+.movies-container {
+  display: flex;
+}
+
+.MoviesList {
+  min-width: 300px;
+  max-width: 300px;
+  overflow: scroll;
 }
 
 .MoviesList li {
-  margin-bottom: 0.5em;
+  padding: 0.5em 0.8em;
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position-y: 10%;
+  background-color: rgba(255, 255, 255, 0.249);
+  background-blend-mode: hue;
 }
 
-.MoviesList li p:hover {
+.MoviesList li:hover {
   cursor: pointer;
+  background-blend-mode: inherit;
+}
+
+.MovieDetails {
+  border: 2px solid red;
+}
+
+.backdrop-container {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgba(73, 73, 73, 0.87);
+  background-blend-mode: hue;
 }
 
 .MovieDetails img {
@@ -96,6 +117,8 @@ button {
 .SearchBar {
   background-color: var(--main-color1-dark);
   padding: 2em;
+  display: flex;
+  justify-content: center;
 }
 
 #search-input {
@@ -103,6 +126,7 @@ button {
   border-radius: 25px;
   margin: 1em;
   padding: 0.5em 0.8em;
+  width: 30em;
 }
 
 #search-input:focus {

@@ -3,6 +3,7 @@ import axios from 'axios';
 import MoviesList from './MoviesList';
 import MovieDetails from './MovieDetails';
 import SearchBar from './SearchBar';
+import SelectMovie from './SelectMovie';
 
 export class Interface extends Component {
     state = {
@@ -37,7 +38,7 @@ export class Interface extends Component {
         .get("https://api.themoviedb.org/3/discover/movie?api_key=0d132f86ea28928807693b5cda4e8779")
         .then((response) => {this.setState({
             movies: response.data.results,
-            selectedMovie: null
+            search: ""
         })})
         .catch(err => console.log(err))
     }
@@ -54,29 +55,27 @@ export class Interface extends Component {
     render() {
         return (
             <div className="Interface">
-                <div>
-                    <SearchBar 
+                <SearchBar 
                     handleSearch={this.handleSearch}
                     filterMovies={this.filterMovies}
                     resetSearch={this.resetSearch}
                     value={this.state.search}
                     />
+                <div className="movies-container">
                     <MoviesList 
                     movies={this.state.movies}
                     select={this.selectMovie}
                     />
-                    
-                </div>
 
-                {!this.state.selectedMovie && 
-                <div>
-                    <p>Select a movie</p>
-                </div>}
-                {this.state.selectedMovie && 
-                <MovieDetails 
-                genres={this.state.genres}
-                details={this.state.selectedMovie}
-                />}
+                    {!this.state.selectedMovie && 
+                    <SelectMovie />}
+
+                    {this.state.selectedMovie && 
+                    <MovieDetails 
+                    genres={this.state.genres}
+                    details={this.state.selectedMovie}
+                    />}
+                </div>
             </div>
         )
     }
