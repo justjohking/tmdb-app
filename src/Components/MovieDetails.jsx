@@ -7,11 +7,22 @@ export class MovieDetails extends Component {
         genres: null
     }
 
+    // pair the genre ids in the movie info with the array of genres that we got in initial API call in the Interface component
     componentDidMount() {
         this.setState({
             genres: this.props.details.genre_ids.map((ID) => {
             return this.props.genres.filter(oneGenre => oneGenre.id === ID)[0]
         })})
+    }
+
+    // since the props change, specifically the genres, we need to update the component to get the genres of the new movie being displayed
+    componentDidUpdate(prevProps, prevState) {
+        if(this.props.details.genre_ids !== prevProps.details.genre_ids) {
+            this.setState({
+                genres: this.props.details.genre_ids.map((ID) => {
+                return this.props.genres.filter(oneGenre => oneGenre.id === ID)[0]
+            })})
+        }
     }
     
     render() {
