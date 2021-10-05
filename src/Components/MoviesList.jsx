@@ -14,7 +14,9 @@ export class MoviesList extends Component {
                         <li 
                         key={movie.id} 
                         onClick={() => this.selectMovie(movie.id)}
-                        style={movie.backdrop_path ? {backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`} : {backgroundColor: "grey"}}
+                        style={movie.backdrop_path ? 
+                            {backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`} : 
+                            {backgroundColor: "grey"}}
                         >
                             <p>{movie.title}</p>
                         </li>

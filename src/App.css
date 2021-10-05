@@ -144,13 +144,16 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2em;
+  max-width: 300px;
+  min-width: 300px;
+  max-height: 300px;
+  min-height: 300px;
 }
 
 .poster-container img {
-  height: 300px;
-  margin-top: auto;
-  margin-bottom: auto;
+  max-height: 250px;
+  max-width: 250px;
+  /* padding: 2em; */
 }
 
 .movie-title {

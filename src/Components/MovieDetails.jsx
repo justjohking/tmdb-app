@@ -24,10 +24,12 @@ export class MovieDetails extends Component {
                     <div className="backdrop-container"
                     style={this.props.details.backdrop_path ? 
                         {backgroundImage: `url(https://image.tmdb.org/t/p/original${this.props.details.backdrop_path})`} : 
-                        {backgroundColor: "white"}}
+                        {backgroundColor: "grey"}}
                     >
                         <div className="poster-container">
-                            <img src={"https://image.tmdb.org/t/p/original" + this.props.details.poster_path} alt="poster"/>
+                            {this.props.details.poster_path ?
+                            <img src={"https://image.tmdb.org/t/p/original" + this.props.details.poster_path} alt="poster"/> : 
+                            <p>No poster available</p>}
                         </div>
 
                         <div className="banner">
