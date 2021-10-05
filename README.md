@@ -1,3 +1,5 @@
+#NDLR
+
 Aperçu général 
 
 Ce projet repose sur l'API de [TMDB](https://www.themoviedb.org/) : https://developers.themoviedb.org/. 
@@ -17,9 +19,10 @@ Ce projet a été créé grâce à [Create React App](https://github.com/faceboo
 
 URL : http://localhost:3000
 
+
 ––––––––––––––––––––––––
 
-# Getting Started with Create React App
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
