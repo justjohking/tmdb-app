@@ -11,9 +11,7 @@ Ce projet a été créé grâce à [Create React App](https://github.com/faceboo
 
 URL : http://localhost:3000
 
-
-
-
+––––––––––––––––––––––––
 
 # Getting Started with Create React App
 
