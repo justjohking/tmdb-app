@@ -69,15 +69,18 @@ button {
 .Interface {
   display: flex;
   flex-direction: column;
+  height: 100vh;
 }
 
 .movies-container {
   display: flex;
+  /* border: 3px solid green; */
 }
 
 .MoviesList {
   min-width: 300px;
   max-width: 300px;
+  max-height: 100vh;
   overflow: scroll;
 }
 
@@ -100,19 +103,121 @@ button {
 }
 
 .MovieDetails {
-  border: 2px solid red;
+  /* border: 2px solid red; */
+  width: 100%;
+  min-width: 60%;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+.movie-info-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: fit-content;
 }
 
 .backdrop-container {
+  color: white;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: stretch;
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: rgba(73, 73, 73, 0.87);
   background-blend-mode: hue;
+  background-color: rgba(73, 73, 73, 0.87);
+  background-size: cover;
+  background-position-y: 20%;
+  max-height: 600px;
+  /* border: 2px green solid; */
 }
 
-.MovieDetails img {
-  height: 300px;
+.banner {
+  /* border: red 2px solid; */
+  padding: 2em 3em 2em 1em;
 }
+
+.poster-container {
+  /* border: 3px pink solid; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+}
+
+.poster-container img {
+  height: 300px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.movie-title {
+  font-size: 3em;
+  margin: 0 0 0.3em 0;
+}
+
+.sub-title {
+  margin-top: 0;
+  font-style: italic;
+}
+
+.sub-title span {
+  text-transform: uppercase;
+}
+
+.overview {
+  margin-top: 2em;
+  text-align: justify;
+  overflow: hidden;
+}
+
+.info-div {
+  color: white;
+  background-color: var(--main-color1-dark);
+  margin: 1em 5em auto 5em;
+  padding: 3em;
+  /* border: 5px solid red; */
+}
+
+.info-div .first-container {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+}
+
+.popularity {
+  height: 1.5em;
+  margin-right: 0.5em;
+}
+
+.votes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 1em 7em 1em 7em;
+}
+
+.genres {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.genres li {
+  text-transform: uppercase;
+  color: rgb(68, 68, 68);
+  font-weight: bold;
+  font-size: 0.8em;
+  background-color: rgb(209, 209, 209);
+  border-radius: 5px;
+  padding: 0.3em 0.5em 0.3em 0.5em;
+  width: fit-content;
+  margin: auto 0.2em auto 0.2em;
+}
+
+/* SEARCH BAR */
 
 .SearchBar {
   background-color: var(--main-color1-dark);
@@ -127,6 +232,10 @@ button {
   margin: 1em;
   padding: 0.5em 0.8em;
   width: 30em;
+}
+
+#search-input ::placeholder {
+  color: black;
 }
 
 #search-input:focus {
@@ -158,4 +267,11 @@ button {
     var(--main-color1-light),
     var(--main-color2-medium)
   );
+}
+
+.MovieDetails-empty {
+  text-align: center;
+  color: black;
+  margin: 2em auto auto auto;
+  font-size: 2em;
 }

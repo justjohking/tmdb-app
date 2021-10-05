@@ -9,7 +9,7 @@ export class Interface extends Component {
     state = {
         movies : [],
         search: "",
-        selectedMovie: null,
+        selectedMovie: "",
         genres: []
     };
 
@@ -38,7 +38,8 @@ export class Interface extends Component {
         .get("https://api.themoviedb.org/3/discover/movie?api_key=0d132f86ea28928807693b5cda4e8779")
         .then((response) => {this.setState({
             movies: response.data.results,
-            search: ""
+            search: "",
+            selectedMovie: ""
         })})
         .catch(err => console.log(err))
     }
@@ -67,7 +68,7 @@ export class Interface extends Component {
                     select={this.selectMovie}
                     />
 
-                    {!this.state.selectedMovie && 
+                    {this.state.selectedMovie.length === 0 && 
                     <SelectMovie />}
 
                     {this.state.selectedMovie && 

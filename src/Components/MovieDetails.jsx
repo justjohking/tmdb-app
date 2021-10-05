@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import popularityIcon from '../assets/popularity.png';
 
 export class MovieDetails extends Component {
 
@@ -14,28 +15,47 @@ export class MovieDetails extends Component {
     }
     
     render() {
-        console.log(this.props.details)
+        // console.log(this.props.details)
         return (
             <div className="MovieDetails">
-                <div className="backdrop-container"
-                style={this.props.details.backdrop_path ? 
-                {backgroundImage: `url(https://image.tmdb.org/t/p/original${this.props.details.backdrop_path})`} : 
-                {backgroundColor: "white"}}>
 
-                    <div className="info-container">
-                        <h2>{this.props.details.title}</h2>
-                        <img src={"https://image.tmdb.org/t/p/original" + this.props.details.poster_path} alt="poster"/>
-                        <p>{this.props.details.overview}</p>
-                        <p>{this.props.details.popularity}</p>
-                        <p>Released : {this.props.details.release_date}</p>
-                        <p>Original title : {this.props.details.original_title}</p>
+                <div className="movie-info-container">
+
+                    <div className="backdrop-container"
+                    style={this.props.details.backdrop_path ? 
+                        {backgroundImage: `url(https://image.tmdb.org/t/p/original${this.props.details.backdrop_path})`} : 
+                        {backgroundColor: "white"}}
+                    >
+                        <div className="poster-container">
+                            <img src={"https://image.tmdb.org/t/p/original" + this.props.details.poster_path} alt="poster"/>
+                        </div>
+
+                        <div className="banner">
+                            <p className="movie-title">{this.props.details.title}</p>
+                            {this.props.details.title !== this.props.details.original_title && 
+                            <p className="sub-title">{this.props.details.original_title} (<span>{this.props.details.original_language}</span>)</p>
+                            }
+                            <p className="overview">{this.props.details.overview}</p>
+                        </div>
+                    </div>
+
+                    <div className="info-div">
+                        <div className="first-container">
+                            <div>
+                                <img src={popularityIcon} alt="icon Freepik" className="popularity"/>
+                                {this.props.details.popularity}
+                            </div>
+                            <p>Released : {this.props.details.release_date}</p>
+                            <p>{this.props.details.adult ? "+18" : "  "}</p>
+                        </div>
                         
-                        <p>{this.props.details.adult ? "+18" : ""}</p>
-                        <p>{this.props.details.id}</p>
-                        <p>Average vote : {this.props.details.vote_average}</p>
-                        <p>Number of votes : {this.props.details.vote_count}</p>
+                        <div className="votes">
+                            <p>Average vote : {this.props.details.vote_average}</p>
+                            <p>Number of votes : {this.props.details.vote_count}</p>
+                        </div>
+                        
                         {this.state.genres && 
-                        <ul>{this.state.genres.map((genre) => {
+                        <ul className="genres">{this.state.genres.map((genre) => {
                             return (<li key={genre.id}>{genre.name}</li>)
                         })}</ul>}
                     </div>
