@@ -16,7 +16,7 @@ export class MovieDetails extends Component {
     }
 
     // since the props change, specifically the genres, we need to update the component to get the genres of the new movie being displayed
-    componentDidUpdate(prevProps, prevState) {
+    componentDidUpdate(prevProps) {
         if(this.props.details.genre_ids !== prevProps.details.genre_ids) {
             this.setState({
                 genres: this.props.details.genre_ids.map((ID) => {
