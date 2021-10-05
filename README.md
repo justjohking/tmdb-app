@@ -1,4 +1,28 @@
-# Getting Started with Create React App
+# NDLR
+
+Aperçu général 
+
+Ce projet repose sur l'API de [TMDB](https://www.themoviedb.org/) : https://developers.themoviedb.org/. 
+
+La clé API utilisée dans ce fichier a été générée par moi-même sur le site ci-dessus. 
+
+Ce projet a été créé grâce à [Create React App](https://github.com/facebook/create-react-app).
+
+## Installations nécessaires avant d'exécuter le programme : 
+
+### `npm i`
+--> Installer tous les modules nécessaires à l'exécution du programme en local. 
+
+## Exécution du programme : 
+
+### `npm start`
+
+URL : http://localhost:3000
+
+
+––––––––––––––––––––––––
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
