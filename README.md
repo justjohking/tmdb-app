@@ -1,12 +1,12 @@
 Installations nécessaires avant d'exécuter le programme : 
 
-# `npm i`
+### `npm i`
 Installer tous les modules nécessaires à l'exécution du programme en local. 
 URL : http://localhost:3000
 
 Exécution du programme : 
 
-# `npm start`
+### `npm start`
 
 
 
